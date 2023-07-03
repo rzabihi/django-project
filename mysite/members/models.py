@@ -14,3 +14,6 @@ class Member(models.Model):
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
+
+class Order(models.Model):
+    pass
