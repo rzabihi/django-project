@@ -1,8 +1,7 @@
 
 from django.db import models
 
-# Create your models here.
-# CRUD
+
 
 # ORM (Object Relation Mapper)
 
