@@ -1,0 +1,52 @@
+{% extends "master.html" %}
+
+{% block title %} all members {% endblock %}
+
+{% block content %}
+    <h1>Members</h1>
+
+    {% comment %}
+    {#
+    <ul>
+        {% if mymembers %}
+            {% for x in mymembers %}
+             <li><a href="details/{{x.id}}">{{ x.firstName }} {{ x.lastName }}</a></li> 
+                <li>
+                    <div class="card w-50">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ x.lastName }}</h5>
+                        <p class="card-text">{{ x.firstName }} {{ x.lastName }}</p>
+                        <a href="details/{{ x.slug }}" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        {% else %}
+            <h2>Your club is empty</h2>
+        {% endif %}
+    </ul> #}
+    {% endcomment %}
+    <table  class="table table-hover">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">phone</th>
+            <th scope="col">Date</th>
+          </tr>
+      
+        {% if mymembers %}
+            {% for x in mymembers %}
+                <!-- <li><a href="details/{{x.id}}">{{ x.firstName }} {{ x.lastName }}</a></li>   -->
+                <tr>
+                        <th scope="row">{{ x.id }}</th>
+                        <td>{{ x.firstName }} {{ x.lastname }}</td>
+                        <td>{{ x.phone }}</td>
+                        <td>{{ x.joined_date }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <h2>Your club is empty</h2>
+        {% endif %}
+    </table>
+
+{% endblock %}
